@@ -26,6 +26,7 @@ while popitka < pop:
 
 	if l == login and p == password:
 		print now_date, os.name
+		break
 	else:
 		print "Ne vernii login ili parol\nPovtorite popitky"
 	x = randint(1,4)
@@ -40,5 +41,5 @@ while popitka < pop:
 	popitka += 1
 
 	import time
-	time.sleep(10)
+	time.sleep(5)
 print "Y vas zakon4ilis popitki"		
