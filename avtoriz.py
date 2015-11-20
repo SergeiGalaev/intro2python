@@ -41,5 +41,6 @@ while popitka < pop:
 	popitka += 1
 
 	import time
-	time.sleep(5)
-print "Y vas zakon4ilis popitki"		
+	time.sleep(10)
+if popitka == 3:
+	print "Y vas zakon4ilis popitki"		
